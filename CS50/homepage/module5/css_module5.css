@@ -1,0 +1,47 @@
+
+.centered
+{
+    text-align: center;
+}
+
+.mailto{
+  display:block;
+  width:100px;
+  height:20px;
+}
+.wrapper
+{
+  display: grid;
+  grid-template-columns: 100px 100px;
+}
+
+header
+{
+    font-size: X-large;
+}
+
+sub_header
+{
+    font-size: XX-large;
+}
+
+main
+{
+
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    font-size: large;
+}
+
+secret
+{
+    font-size: xx-small;
+    visibility: hidden;
+}
+
+footer
+{
+    font-size: small;
+}

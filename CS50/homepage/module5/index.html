@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="css_module5.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <title>
+            Home Page
+        </title>
+        <script>
+
+            // Toggles visibility of images
+            function blink()
+            {
+                let header = document.querySelector('header');
+                if (header.style.visibility == 'hidden')
+                {
+                    header.style.visibility = 'visible';
+                }
+                else
+                {
+                    header.style.visibility = 'hidden';
+                }
+            }
+
+            // Displays secret message
+            window.setInterval(blink, 200);
+
+            function smessage()
+            {
+                let smes = document.querySelector('secret');
+
+                smes.style.visibility = 'visible';
+
+            }
+
+        </script>
+    </head>
+    <body class = 'centered'>
+        <header>
+            <!-- Some images of Floris sorry for the copy paste -->
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+            <img src="WIN_20190220_12_24_58_Pro (2).jpg" alt="Picture of Floris Fok" width="120" height="180">
+        </header>
+        <sub_header>
+            <!-- Seperate header, so this wont blink -->
+            <p>Floris Fok</p>
+        </sub_header>
+        <main style = "background-color: lightblue">
+            <!-- Block with text and links -->
+            <p style = "font-size: XX-large"><strong>Welcome to my home page!</strong></p>
+            <p>Here is some information about me, Floris</p>
+            <!-- Fancy symbols -->
+            <p>&#10024 &#10024 &#10024 &#10024</p>
+            <p><i>You can find me on the following platforms:</i></p>
+            <p> Find me on <a href = "https://www.linkedin.com/in/floris-jan-fok/" target="_blank" >LinkedIn</a></p>
+            <p> Find me on <a href = "https://www.facebook.com/floris.fok" target="_blank" >FaceBook</a></p>
+            <p> Find me on <a href = "https://github.com/check50/FlorisFok" target="_blank" >Github</a></p>
+            <p> Find me on <a href = "https://soundcloud.com/floris-fok" target="_blank" >SoundCloud</a></p>
+            <!-- Some Buttons with actions -->
+            <p> Or you can contact me on:</p>
+            <button id = 'yes'>MAIL</button>
+            <button id = "no">DON'T MAIL</button>
+        </main>
+        <Secret>
+            <!-- This is hidden untill trigged by button dont mail -->
+            Your brain is as small as this text
+        </Secret>
+        <footer>
+            <!-- Sneaky href and copyright :D -->
+            <p>Copyright &#169; Floris Fok <a href = "mailto:floris.fok@student.uva.nl" id = 'click'>.</a></p>
+        </footer>
+        <script>
+            //button actions
+            document.querySelector('#yes').onclick = function()
+            {
+                //Activate mailto
+                window.location=document.getElementById('click').href;
+            };
+            document.querySelector('#no').onclick = function()
+            {
+                //Activates prank
+                alert("Look at the bottom off the screen you fooool");
+                smessage();
+            };
+        </script>
+    </body>
+</html>
