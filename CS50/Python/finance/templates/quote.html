@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1 class="main_text" > Want to know the price? </h1>
+    <div class="extra_thicc" >
+    <form action="/quote" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="stock" placeholder="Stock" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Look up</button>
+    </form>
+    </div>
+    <!--If there is a value to show: show it-->
+    {% if info != None %}
+        <!--shows current price and your amount-->
+        <h3>{{info['name']}} ({{info['symbol']}})</h3>
+        <h3>Current price: {{info['price']}}</h3>
+        <h3></h3>
+        <h5>You have {{amount}} share(s) in this company</h5>
+    {% endif %}
+
+{% endblock %}

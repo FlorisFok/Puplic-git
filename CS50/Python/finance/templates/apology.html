@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+<!--Makes red message box, with go back button-->
+    <div class="alert">
+         {{messeage}} (error: {{top}})
+         <div>
+         <button class = "close" onclick="goBack()">Go Back</button>
+         </div>
+    </div>
+    <!--Onclick go to give URL-->
+    <script>
+    function goBack() {
+      window.location.href = '{{url}}';
+    }
+    </script>
+{% endblock %}

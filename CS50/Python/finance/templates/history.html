@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2 class="main_text"> Your History currently holds the following</h2>
+    <div class="extra_thicc" >
+
+    <table>
+        <!--Makes transaction table from json-->
+        <tr>
+            <th>
+                Time
+            </th>
+            <th>
+                Share
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Buy/Sell
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Cash flow
+            </th>
+        </tr>
+    {% for stock in histo %}
+        <tr>
+            <td>
+                {{ stock['time'] }}
+            </td>
+            <td>
+                {{ stock['stock'] }}
+            </td>
+            <!--shows only positive values-->
+            <td>
+                {{ stock['amount']|abs }}
+            </td>
+            <!--adds sold and bought comment-->
+            <td>
+                {% if stock['amount'] < 0 %}
+                <p>Sold</p>
+                {% endif %}
+                {% if stock['amount'] > 0 %}
+                <p>Bought</p>
+                {% endif %}
+            </td>
+            <td>
+                {{ stock['price'] }}
+            </td>
+            <td>
+                {{ stock['cash'] }}
+            </td>
+        </tr>
+    {% endfor %}
+
+    </table>
+    </div>
+    <h5> Want to see more, change here the view length.</h5>
+    <form action="/history" method="post">
+        <div class="form-group">
+            <select autofocus class="form-control" name="item" placeholder="items">
+
+                <option selected="selected" value={{value}}>{{value}}</option>
+                <option value=5>5</option>
+                <option value=10>10</option>
+                <option value=50>50</option>
+                <option value=100>100</option>
+                <option value=-1>ALL</option>
+
+            </select>
+
+        <button class="btn btn-primary" type="submit">EDIT</button>
+    </form>
+
+{% endblock %}

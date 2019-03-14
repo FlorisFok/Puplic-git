@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h2 class = "main_text"> Your portfolio currently holds the following</h2>
+<div class="extra_thicc">
+    <!--Make table out of json file, showing the portfolio-->
+    <table style = "width:100%">
+        <tr>
+            <th>
+                Shares
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Sum
+            </th>
+        </tr>
+    {% for stock in porto %}
+        <tr>
+            <td>
+                {{ stock['stock'] }}
+            </td>
+            <td>
+                {{ stock['company'] }}
+            </td>
+            <td>
+                {{ stock['amount'] }}
+            </td>
+            <td>
+                {{ stock['price'] }}
+            </td>
+            <td>
+                {{ stock['cash'] }}
+            </td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <th>
+                Bank
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th>
+                {{cash}}
+            </th>
+        </tr>
+        <tr>
+            <!--Some total values of the colunm above-->
+            <th>
+                Total
+            </th>
+            <th>
+
+            </th>
+            <th>
+                {{total_stocks}}
+            </th>
+            <th>
+
+            </th>
+            <th>
+                {{total_cash}}
+            </th>
+        </tr>
+    </table>
+</div>
+{% endblock %}
