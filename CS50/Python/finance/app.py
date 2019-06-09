@@ -313,7 +313,7 @@ def sell():
         # Checks if you have enough stocks
         old_amount = Stable.get_amount(user_id, stock)
         if old_amount < new_amount:
-             return apology(f"You only have {old_amount} stocks", "/sell")
+             return apology("You only have {} stocks".format(old_amount), "/sell")
         elif old_amount == new_amount:
             delete = True
 

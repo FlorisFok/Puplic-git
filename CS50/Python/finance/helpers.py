@@ -1,5 +1,5 @@
 import requests
-import urllib.parse
+import urllib
 
 from flask import redirect, render_template, request, session
 from functools import wraps
@@ -41,7 +41,7 @@ def lookup(symbol):
 
     # Contact API
     try:
-        response = requests.get(f"https://api.iextrading.com/1.0/stock/{urllib.parse.quote_plus(symbol)}/quote")
+        response = requests.get(f"https://api.iextrading.com/1.0/stock/{urllib.parse.quote_plus(symbol)}/quote".format())
         response.raise_for_status()
     except requests.RequestException:
         return None
